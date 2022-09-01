@@ -4,7 +4,7 @@
         <link href="./styles.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&family=Raleway:wght@200;400;700&display=swap" rel="stylesheet">
         <title>To Do List</title>
     </head>
     <body>
@@ -13,16 +13,17 @@
                 <h1>Your To Do List</h1>
             </header>
             <main>
+                <div class="input-div">
+                    <label class="input-label" for="taskA">Type a task <span>↘</span></label>
+                    <input id="taskA" name="taskA" type="text">
+                </div>
                 <div class="task" id="list-div">
                 
                 </div>
-                <div>
-                    <label for="taskA">Type a task:</label>
-                    <input id="taskA" name="taskA" type="text">
-                </div>
-                <button>Clear Completed Tasks</button>
+
             </main>
             <footer>
+                <button id="clear-button" class="clear-button">Clear Completed Tasks</button>
 
             </footer>
          </div>

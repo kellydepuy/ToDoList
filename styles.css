@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
@@ -10,24 +13,25 @@ body {
 
 .container {
     background-color: lightblue;
-    padding: 4em;
-    margin:1em;
+    background: linear-gradient(190deg, #e3ffe7 0%, #d9e7ff 100%);
+    margin: 2em;
+    padding: 1em 5em;
+    border-radius: 10px;;
 }
 
 h1{
     text-align: center;
+    font-family: 'Qwitcher Grypen', cursive;;
+    font-size: 6rem;
+    margin: .5em auto .3em auto;
+    color: rgb(52, 52, 52);
+    text-shadow: 0px 0px 1px rgb(52, 52, 52);
 }
 
 p {
     font-size: 1.1rem;
 }
 
-label {
-    display: inline-block;
-    font-weight: 200;
-    margin-bottom: 1em;
-    padding: .75em;
-}
 
 input[type=text] {
     border: none;
@@ -38,20 +42,12 @@ input[type=text] {
     margin-bottom: 2em;
 }
 
-button {
-    background-color: goldenrod;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    letter-spacing: .1em;
-    border: none;
-    border-radius: 8px;
-    padding: 1em 1.5em;
-    margin-bottom: 2em;
-}
-
 .task {
    padding: .5em;
    text-align: left;
+   font-size: 1.2rem;
+   font-weight: 400;
+   margin-bottom: 1.5em;
 }
 
 .cross-out {
@@ -61,3 +57,97 @@ button {
 .icon {
     font-size: 1em;
 }
+
+#list-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(201, 201, 221, 0.458);
+    opacity: .95;
+    padding: 0 3em .75em 3em;
+    margin-bottom: 3em;
+    border-radius: 5px;
+    box-shadow: 0px 1px 1px;
+}
+
+#taskA {
+    width: 80%;
+    margin: .5em auto 2em auto;
+    background: linear-gradient(190deg, #e3ffe7 0%, #d9e7ff 100%);
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px black;
+}
+
+.input-label {
+    text-align: left;
+    font-size: 2.5rem;
+    color: rgb(52, 52, 52);
+    padding: .5em;
+    width: fit-content;
+    border-radius: 5px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+}
+
+.input-label span {
+    font-size: 1.1em;
+    padding: .1em
+}
+
+.clear-button {
+    width: fit-content;
+    background-color: transparent;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: .75em;
+    letter-spacing: .1em;
+    border: none;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 1em 1.5em;
+    margin-bottom: 2em;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 8px;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .container {
+        padding: 1em;
+    }
+
+    .input-div {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 451px) {
+    html {
+        font-size: 12px;
+    }
+}
+

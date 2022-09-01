@@ -1,17 +1,28 @@
 const listDiv = document.getElementById("list-div")
-let listCount = 0
-let taskId = ""
-let inputValue = ""
+let listCount = 1
 
+document.getElementById("taskA").addEventListener("change", handleAddItem)
+document.querySelectorAll(".task").forEach((task) => task.addEventListener("click", handleCrossOut)) 
+document.getElementById("clear-button").addEventListener("click", handleClearCompleted)
+
+
+if (localStorage.getItem("count")) {
+    listCount = JSON.parse(localStorage.getItem("count"))
+} else {
+    localStorage.setItem("count", "1")
+    listCount = 1
+}
 
 
 function handleAddItem(e) {
-    inputValue = e.target.value
     listCount ++
-    taskId = "task" + listCount
-    document.querySelectorAll(".task").forEach((task) => task.addEventListener("click", handleCrossOut))
-    renderList()
-    inputValue = ""
+    const obj = {
+        value: e.target.value,
+        id: "task" + listCount
+    }
+    localStorage.setItem("count", JSON.stringify(listCount))
+    localStorage.setItem(`"${obj.id}"`, JSON.stringify(obj))
+    handleAddHTML(obj.value, obj.id)
     document.getElementById("taskA").value= ""
 }
 
@@ -31,11 +42,46 @@ function handleCrossOut(e) {
 }
  }
 
-function renderList() {
+ function handleAddHTML(inputValue, id) {
     listDiv.innerHTML += `
-    <input class="task" id="box${taskId}" type="checkbox">
-    <label for="box${taskId}" class="task" id="${taskId}">${inputValue}</label>`
+    <input class="task box" id="box${id}" type="checkbox">
+    <label for="box${id}" class="task" id="${id}">${inputValue}</label>`
+ }
+
+ function handleClearCompleted(e) {
+    console.log("clicked")
+    const keys = Object.keys(localStorage)
+    const countIndex = keys.indexOf("count")
+    keys.splice(countIndex, 1)
+
+    for (let i = 0; i < localStorage.length - 1; i++) {
+        let currentTask = JSON.parse(localStorage.getItem(keys[i]))
+        let currentTaskEl =document.getElementById(currentTask.id)
+       if (currentTaskEl.classList.contains("cross-out")) {
+        console.log(currentTask.id)
+        localStorage.removeItem(JSON.stringify(currentTask.id))
+        currentTaskEl.remove()
+        document.getElementById(`box${currentTask.id}`).remove()
+       }
+    }
+    
+ }
+
+function renderList() {
+    const keys = Object.keys(localStorage)
+    const countIndex = keys.indexOf("count")
+    keys.splice(countIndex, 1)
+    
+    for (let i = 0; i < localStorage.length - 1; i++) {
+            const key = JSON.parse(localStorage.getItem(keys[i]))
+            const id = key.id
+            const inputValue= key.value
+            listDiv.innerHTML += `
+            <div class="single-task-container">
+                <input class="task box" id="box${id}" type="checkbox">
+                <label for="box${id}" class="task" id="${id}">${inputValue}</label>
+            </div>`
+    }
 }
 
-
-document.getElementById("taskA").addEventListener("change", handleAddItem)
+renderList()
