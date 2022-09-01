@@ -32,40 +32,7 @@ p {
     font-size: 1.1rem;
 }
 
-
-input[type=text] {
-    border: none;
-    padding: .75em;
-    font-family:'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 2em;
-}
-
-.task {
-   padding: .5em;
-   text-align: left;
-   font-size: 1.2rem;
-   font-weight: 400;
-   margin-bottom: 1.5em;
-}
-
-.cross-out {
-    text-decoration: line-through;
-}
-
-.icon {
-    font-size: 1em;
-}
-
-#list-div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-
-}
+/* ***** Input Styling ***** */
 
 .input-div {
     display: flex;
@@ -76,6 +43,15 @@ input[type=text] {
     margin-bottom: 3em;
     border-radius: 5px;
     box-shadow: 0px 1px 1px;
+}
+
+input[type=text] {
+    border: none;
+    padding: .75em;
+    font-family:'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 2em;
 }
 
 #taskA {
@@ -102,6 +78,44 @@ input[type=text] {
     padding: .1em
 }
 
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+
+/* ***** Task List Styling ***** */
+
+.task {
+   padding: .5em;
+   text-align: left;
+   font-size: 1.2rem;
+   font-weight: 400;
+   margin-bottom: 1.5em;
+}
+
+.cross-out {
+    text-decoration: line-through;
+}
+
+.icon {
+    font-size: 1em;
+}
+
+#list-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+}
+
+/* ***** Clear Button Styling ***** */
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+
+}
 .clear-button {
     width: fit-content;
     background-color: transparent;
@@ -116,15 +130,8 @@ input[type=text] {
     margin-bottom: 2em;
 }
 
-footer {
-    display: flex;
-    justify-content: flex-end;
 
-}
-
-input[type=checkbox] {
-    transform: scale(1.5);
-}
+/* ***** Media Queries ***** */
 
 @media (max-width: 450px) {
     html {
