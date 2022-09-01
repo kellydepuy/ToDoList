@@ -44,8 +44,10 @@ function handleCrossOut(e) {
 
  function handleAddHTML(inputValue, id) {
     listDiv.innerHTML += `
-    <input class="task box" id="box${id}" type="checkbox">
-    <label for="box${id}" class="task" id="${id}">${inputValue}</label>`
+    <div class="single-task-container">
+        <input class="task box" id="box${id}" type="checkbox">
+        <label for="box${id}" class="task" id="${id}">${inputValue}</label>
+    </div>`
  }
 
  function handleClearCompleted(e) {
