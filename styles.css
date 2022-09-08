@@ -54,7 +54,7 @@ input[type=text] {
     margin-bottom: 2em;
 }
 
-#taskA {
+#task-input {
     width: 80%;
     margin: .5em auto 2em auto;
     background: linear-gradient(190deg, #e3ffe7 0%, #d9e7ff 100%);
@@ -94,6 +94,10 @@ input[type=checkbox] {
 
 .cross-out {
     text-decoration: line-through;
+}
+
+.not-crossed {
+    text-decoration: none;
 }
 
 .icon {
