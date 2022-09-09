@@ -6,7 +6,7 @@ let listCount = 1
 
 // ***** Event Listeners *****
 document.getElementById("task-input").addEventListener("change", handleAddItem)
-listDiv.addEventListener("click", handleCrossOut)
+listDiv.addEventListener("change", handleCrossOut)
 document.getElementById("clear-button").addEventListener("click", handleClearCompleted)
 
 // ***** Functions *****
